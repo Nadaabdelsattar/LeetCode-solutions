@@ -86,6 +86,8 @@ Feel free to reach out if you have any questions or suggestions!
 
 - Share knowledge and collaborate with others.
 
+---
+
 ##⭐️ Acknowledgments
 
 - Thanks to LeetCode for providing such a comprehensive platform for coding practice.
