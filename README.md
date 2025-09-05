@@ -7,9 +7,9 @@ Welcome to my LeetCode repository! Here, I upload my solutions to various LeetCo
 ## 📂 Repository Structure
 The repository is organized based on the LeetCode problem numbers and names:
 
-001_two_sum.js
-002_add_two_numbers.php
-003_longest_substring_without_repeating_characters.sql
+- `001_two_sum.js`
+- `002_add_two_numbers.php`
+- `003_longest_substring_without_repeating_characters.sql`
 (... and so on)
 
 Each file is named after the LeetCode problem's number and a brief description for easier reference.
@@ -76,7 +76,7 @@ Feel free to reach out if you have any questions or suggestions!
 
 ---
 
-##🌟 Goals
+## 🌟 Goals
 
 - Enhance problem-solving skills.
 
@@ -88,7 +88,7 @@ Feel free to reach out if you have any questions or suggestions!
 
 ---
 
-##⭐️ Acknowledgments
+## ⭐️ Acknowledgments
 
 - Thanks to LeetCode for providing such a comprehensive platform for coding practice.
 
