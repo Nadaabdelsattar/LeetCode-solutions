@@ -102,4 +102,12 @@ Feel free to reach out if you have any questions or suggestions!
 |  |
 | ------- |
 | [0181-employees-earning-more-than-their-managers](https://github.com/Nadaabdelsattar/LeetCode-solutions/tree/master/0181-employees-earning-more-than-their-managers) |
+## Array
+|  |
+| ------- |
+| [0001-two-sum](https://github.com/Nadaabdelsattar/LeetCode-solutions/tree/master/0001-two-sum) |
+## Hash Table
+|  |
+| ------- |
+| [0001-two-sum](https://github.com/Nadaabdelsattar/LeetCode-solutions/tree/master/0001-two-sum) |
 <!---LeetCode Topics End-->
