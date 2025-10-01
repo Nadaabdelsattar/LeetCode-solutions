@@ -13,34 +13,31 @@ const folders = {
 Object.values(folders).forEach(folder => {
   const folderPath = path.join(baseDir, folder);
   if (!fs.existsSync(folderPath)) {
-    fs.mkdirSync(folderPath);
+    fs.mkdirSync(folderPath, { recursive: true });
     console.log(`Created folder: ${folderPath}`);
   }
 });
 
 // Function to move a whole folder
 function moveFolder(src, dest) {
-  if (!fs.existsSync(path.dirname(dest))) {
-    fs.mkdirSync(path.dirname(dest), { recursive: true });
+  if (!fs.existsSync(dest)) {
+    fs.mkdirSync(dest, { recursive: true });
   }
-  fs.renameSync(src, dest);
-  console.log(`Moved folder: ${src} → ${dest}`);
+  const target = path.join(path.dirname(dest), path.basename(src));
+  fs.renameSync(src, target);
+  console.log(`Moved folder: ${src} → ${target}`);
 }
 
 fs.readdirSync(baseDir).forEach(item => {
   const itemPath = path.join(baseDir, item);
-  const stat = fs.statSync(itemPath);
+  if (!fs.statSync(itemPath).isDirectory()) return;
 
-  if (stat.isDirectory()) {
-    // check files inside the folder
-    const files = fs.readdirSync(itemPath);
-    for (const file of files) {
-      const ext = path.extname(file);
-      if (folders[ext]) {
-        const targetDir = path.join(baseDir, folders[ext], item);
-        moveFolder(itemPath, targetDir);
-        break; // move once per folder
-      }
-    }
+  // check extensions inside the folder
+  const files = fs.readdirSync(itemPath);
+  const foundExt = files.map(file => path.extname(file)).find(ext => folders[ext]);
+
+  if (foundExt) {
+    const targetDir = path.join(baseDir, folders[foundExt]);
+    moveFolder(itemPath, targetDir);
   }
 });
